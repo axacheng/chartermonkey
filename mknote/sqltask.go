@@ -76,9 +76,9 @@ func Add(profileName string, date string) (addResult int64) {
 
 }
 
-func del(profile string) {
-	//don't use UPDATE reservation SET data=data - '{name_list, "FreddyChen"}' WHERE data @> '{"date": "2018-06-07"}';
-	//start from 0, UPDATE reservation SET data=data #- '{name_list, 1}' WHERE data @> '{"date": "2018-06-07"}';
+//Del update info, -1 for the week
+func Del(profile string) {
+	//UPDATE reservation SET data = jsonb_set(data, '{name_list}', (data->'name_list') - 'FreddyChen') WHERE data @> '{"date": "2018-06-07"}';
 }
 
 //Query queries specific week for the attendees
